@@ -14,44 +14,46 @@ A productivity application for students and academics to track time spent on tas
 
 ## Quick Start Guide
 
-### Prerequisites
-- Docker and Docker Compose
-- Python (3.8+)
-- Required Python packages: `requests`, `matplotlib`, `tkinter`
+### For End Users
+**No installation needed!** Just download and double-click:
+- `Academic Time Tracker.exe`
 
-### Installation
+### For Developers
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/academic-time-tracker.git
-   cd academic-time-tracker
+   git clone https://github.com/Gardiner-Lab/Time_Tracker.git
+   cd Time_Tracker
    ```
 
-2. Install frontend dependencies:
+2. Install dependencies:
    ```bash
    pip install requests matplotlib
    ```
 
 ### Running the Application
 
-#### Option 1: Using Batch Files (Windows)
-1. **Start the backend**: Double-click `run-backend.bat`
-2. **Start the frontend**: Double-click `run-frontend.bat`
+**Simply double-click**: `Academic Time Tracker.exe`
 
-#### Option 2: Manual Commands
-1. **Start the backend server** (in terminal 1):
-   ```bash
-   docker-compose up --build
-   ```
+That's it! The executable:
+- ✅ **No setup required** - Just run the .exe file
+- ✅ **No Python needed** - Standalone executable with all dependencies
+- ✅ **Auto-connects** - Pre-configured for Unraid backend (192.168.2.19:5000)
+- ✅ **Professional** - Clean GUI with no console windows
+- ✅ **Portable** - Copy to any Windows machine and run
 
-2. **Start the frontend GUI** (in terminal 2):
-   ```bash
-   python app.py
-   ```
+### Alternative: Python Development
+If you want to modify the code or run from source:
+```bash
+python app.py
+```
+
+**Note**: Backend runs on Unraid server - no local backend setup needed!
 
 ### Architecture
-- **Backend**: Node.js server running in Docker container on port 5000
-- **Frontend**: Python Tkinter GUI running locally
-- **Database**: SQLite database persisted in `./data/` directory
+- **Backend**: Node.js server running in Docker container on Unraid (192.168.2.19:5000)
+- **Frontend**: Python Tkinter GUI running locally on your desktop
+- **Database**: SQLite database persisted on Unraid server
+- **Communication**: Frontend connects to backend over network
 
 ## Basic Usage
 1. **Create Groups**  
@@ -133,3 +135,4 @@ docker-compose up --build
 - Database file: `./data/database.db`
 - Backups are stored locally and persist across container restarts
 - To reset data, delete the `./data/` directory
+#

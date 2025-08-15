@@ -13,7 +13,12 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
-BASE_URL = "http://localhost:5000"
+# Try to load configuration from config.py, fallback to default
+try:
+    from config import BACKEND_URL
+    BASE_URL = BACKEND_URL
+except ImportError:
+    BASE_URL = "http://192.168.2.19:5000"
 
 class TimeTrackerApp:
     def __init__(self, root):
