@@ -6,7 +6,9 @@ const fs = require('fs');
 
 const app = express();
 const port = 5000;
-const db = new sqlite3.Database('./database.db');
+// Use data directory for database persistence in Docker
+const dbPath = process.env.NODE_ENV === 'production' ? './data/database.db' : './database.db';
+const db = new sqlite3.Database(dbPath);
 
 app.use(bodyParser.json());
 
